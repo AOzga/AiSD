@@ -101,41 +101,42 @@ class LinkedList:
 
 
 
-def test():
-    list_ = LinkedList()
+#def test():
+    # list_ = LinkedList()
+    #
+    # assert list_.head == None
+    #
+    # list_.push(1)
+    # list_.push(0)
+    #
+    # assert str(list_) == '0 -> 1'
+    #
+    # list_.append(9)
+    # list_.append(10)
+    #
+    # print(len(list_))
+    #
+    # assert str(list_) == '0 -> 1 -> 9 -> 10'
+    #
+    # middle_node = list_.node(at=1)
+    # list_.insert(5, after=middle_node)
+    #
+    # assert str(list_) == '0 -> 1 -> 5 -> 9 -> 10'
+    #
+    # first_element = list_.node(at=0)
+    # returned_first_element = list_.pop()
+    #
+    # assert first_element.value == returned_first_element
+    #
+    # last_element = list_.node(at=3)
+    # returned_last_element = list_.remove_last()
+    #
+    # assert last_element.value == returned_last_element
+    #
+    # assert str(list_) == '1 -> 5 -> 9'
+    #
+    # second_node = list_.node(at=1)
+    # list_.remove(second_node)
+    #
+    # assert str(list_) == '1 -> 5'
 
-    assert list_.head == None
-
-    list_.push(1)
-    list_.push(0)
-
-    assert str(list_) == '0 -> 1'
-
-    list_.append(9)
-    list_.append(10)
-
-    print(len(list_))
-
-    assert str(list_) == '0 -> 1 -> 9 -> 10'
-
-    middle_node = list_.node(at=1)
-    list_.insert(5, after=middle_node)
-
-    assert str(list_) == '0 -> 1 -> 5 -> 9 -> 10'
-
-    first_element = list_.node(at=0)
-    returned_first_element = list_.pop()
-
-    assert first_element.value == returned_first_element
-
-    last_element = list_.node(at=3)
-    returned_last_element = list_.remove_last()
-
-    assert last_element.value == returned_last_element
-
-    assert str(list_) == '1 -> 5 -> 9'
-
-    second_node = list_.node(at=1)
-    list_.remove(second_node)
-
-    assert str(list_) == '1 -> 5'

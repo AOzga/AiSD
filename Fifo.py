@@ -6,6 +6,7 @@ class Queue:
 
     def __init__(self):
         self._storage = LinkedList()
+
     def __str__(self):
         ret = ''
         node = self._storage.head
