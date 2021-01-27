@@ -74,7 +74,7 @@ class BinaryTree:
         x = pg.display.set_mode((WIDTH, HEIGHT))
 
         while r:
-            x.fill((0, 0, 0))
+            x.fill((55, 55, 55))
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     r = False
@@ -89,16 +89,16 @@ class BinaryTree:
 
 def drawtree(startposx, startposy, node, surface, spread=200):
     g = pg.font.SysFont('Monospace', 15)
-    txt = g.render(f'Node({node.value})', False, (255, 0, 0))
+    txt = g.render(f'Node({node.value})', False, (200, 200, 200))
     surface.blit(txt, (startposx, startposy - 30))
-    pg.draw.rect(surface, pg.color.Color(25, 255, 25), pg.Rect(startposx, startposy, 51, 51))
+    pg.draw.rect(surface, pg.color.Color(25, 105, 105), pg.Rect(startposx, startposy, 51, 51))
 
     if node.left_child:
-        pg.draw.line(surface, pg.color.Color(255, 0, 0), (startposx + 25, startposy + 25),
+        pg.draw.line(surface, pg.color.Color(65, 135, 0), (startposx + 25, startposy + 25),
                      (startposx - spread + 25, startposy + 125), 2)
         drawtree(startposx - spread, startposy + 100, node.left_child, surface, spread - 50)
     if node.right_child:
-        pg.draw.line(surface, pg.color.Color(255, 0, 0), (startposx + 25, startposy + 25),
+        pg.draw.line(surface, pg.color.Color(65, 135, 0), (startposx + 25, startposy + 25),
                      (startposx + spread + 25, startposy + 125), 2)
         drawtree(startposx + spread, startposy + 100, node.right_child, surface, spread - 50)
 
@@ -117,10 +117,13 @@ tree.root.left_child.add_right_child(3)
 tree.root.right_child.add_left_child(4)
 tree.root.right_child.add_right_child(6)
 
+
 assert tree.root.value == 10
 assert tree.root.right_child.value == 2
 assert tree.root.right_child.is_leaf() is False
 assert tree.root.left_child.left_child.value == 1
 assert tree.root.left_child.left_child.is_leaf() is True
 
+print(tree.root)
+# tree.root.traverse_in_order(visit)
 tree.show()
